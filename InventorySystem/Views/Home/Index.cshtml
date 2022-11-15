@@ -1,0 +1,29 @@
+﻿@model List<InventorySystem.Data.InventoryItem>
+@{
+    ViewData["Title"] = "Home Page";
+}
+<style>
+    .card-img-top img {
+        height: 200px;
+    }
+</style>
+<div class="row">
+    @foreach (var inventoryItem in Model)
+    {
+        <div class="col-4">
+            <div class="card">
+                <div class="card-img-top text-center">
+                    <img src="@inventoryItem.ImagePath" />
+                </div>
+                <div class="card-body">
+                    @inventoryItem.ItemName
+                </div>
+                <div class="card-footer">
+                    <a class="btn btn-dark" asp-controller="Home" asp-action="ItemDetails" asp-route-inventoryItemId="@inventoryItem.InventoryItemID">
+                        View Item Details
+                    </a>
+                </div>
+            </div>
+        </div>
+    }
+</div>

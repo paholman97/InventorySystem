@@ -1,0 +1,21 @@
+﻿@model InventorySystem.Data.InventoryItem
+<style>
+    td img {
+        height: 200px;
+    }
+</style>
+<div class="row">
+    <div class="col-10">
+        <table class="table">
+            <tr>
+                <td colspan="2">
+                    <img src="@Model.ImagePath" />
+                </td>
+            </tr>
+            <tr>
+                <td>Item name:</td>
+                <td>@Model.ItemName</td>
+            </tr>
+        </table>
+    </div>
+</div>
